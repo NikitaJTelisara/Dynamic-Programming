@@ -92,7 +92,7 @@ public class DynamicProg {
         }
         return computeStepsRecursive(n - 1) + computeStepsRecursive(n - 2) + computeStepsRecursive(n - 3);
     }
-  /* incorrect */
+ 
     public static int[] computeStepsDp(int i, int[] map) {
         if (i == 1) {
             map[1] = 1;
