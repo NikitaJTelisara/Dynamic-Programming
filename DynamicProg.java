@@ -158,7 +158,7 @@ public class DynamicProg {
         }
         return (n * getFactorial(n - 1));
     }
-
+    /* not dp */
     public static int getFactorialDP(int n, int[] m) {
         if (n == 1) {
             m[1] = 1;
