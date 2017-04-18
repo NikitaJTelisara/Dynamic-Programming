@@ -2,7 +2,7 @@ public class DynamicProg {
     public static void main(String[] args) {
         fibonacci(6);
         computeSteps(6);
-        computeCents(26);
+        System.out.println(calculteCents(25,5));
         System.out.println("Factorial using Recursion :" + getFactorial(4)); /* recursion*/
         int[] m = new int[5];
         System.out.println("Factorial using DP :" + getFactorialDP(4, m));
@@ -123,26 +123,28 @@ public class DynamicProg {
         System.out.println(m);
     }
 
-   /* public static int calculteCents(int n, int[] m) {
-        if (n < 0) {
-           return 0;
-        } else if (m[n] == 0) {
-            m[n] = 1;
-        } else if (n > 4 && n < 10) {
-            m[n] = 2;
-        } else if (n > 9 && n < 15) {
-            m[n] = 4;
-        } else if (n > 14 && n < 20) {
-            m[n] = 6;
-        } else if (n > 19 && n < 25) {
-            m[n] = 6;
-        } else if (n == 25) {
-            m[n] = 6;
-        } else {
-            m[n] = m[n - 25] + m[n - 10] + m[n - 5] + m[n - 1];
+    public static int calculteCents(int n, int denom) {
+        int next_denom = 0;
+        switch (denom){
+            case 25:
+                next_denom=10;
+                break;
+            case 10:
+                next_denom=5;
+                break;
+            case 5:
+                next_denom=1;
+                break;
+            case 1:
+                return 1;
         }
-        return m;
-    } */
+
+        int ways = 0;
+        for(int i=0;i*denom<=n;i++){
+            ways+=calculteCents(n-1 *denom,next_denom);
+        }
+        return ways;
+    }
 
     /* 9.2 possible ways a robot can go from(0,0) -> (x,y) when it can walk only left and down */
 
