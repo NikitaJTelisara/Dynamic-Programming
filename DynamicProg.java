@@ -283,7 +283,7 @@ one exists, in array A. */
 
       C(n,r)= n!/(n−r)!r!
 
-
+      extra - Find union and intersection of 2 arrays
     */
 
 
