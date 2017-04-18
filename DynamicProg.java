@@ -160,16 +160,14 @@ public class DynamicProg {
     }
     /* not dp */
     public static int getFactorialDP(int n, int[] m) {
-        if (n == 1) {
+        if (n == 0) {
+            m[0] = 1;
+        }else if (n == 1) {
             m[1] = 1;
-            return m[n];
-        }
-        if (n == 2) {
+        } else if (n == 2) {
             m[2] = 2;
-            return m[n];
-        }
-        if (m[n] == 0) {
-            m[n] = n * getFactorialDP((n - 1), m);
+        }  else {
+            m[n] = n * m[n-1];
         }
         return m[n];
     }
