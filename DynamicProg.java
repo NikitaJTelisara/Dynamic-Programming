@@ -270,7 +270,7 @@ one exists, in array A. */
 
 
     /* Permutation of n object
-       P(n) = n!
+       P(n) = n
 
        taken r at a time ,
 
