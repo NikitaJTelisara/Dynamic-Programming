@@ -115,13 +115,7 @@ public class DynamicProg {
       n cents = (n- 1 dime)
       n cents = (n- 1 quarter)
     */
-    public static void computeCents(int n) {
-        // n = n + 1;
-        int[] m = new int[n+1];
-
-        System.out.println("Step dp prob");
-        System.out.println(m);
-    }
+    
 
     public static int calculteCents(int n, int denom) {
         int next_denom = 0;
