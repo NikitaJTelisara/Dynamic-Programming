@@ -30,6 +30,7 @@ class placeNQueens {
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m.length; j++) {
                 if (!rows[i] && !cols[j]) {
+                  //  if (isDiagonalSafeRecursion(m, i, j)) {
                     if (isDiagonalSafe(m, i, j)) {
                         m[i][j] = 1;
                         rows[i] = true;
@@ -92,5 +93,29 @@ class placeNQueens {
             }
             System.out.print("\n");
         }
+    }
+
+    /* place queen recursively */
+    public static boolean isDiagonalSafeRecursion(int[][] m, int row, int col) {
+        int i = row;
+        int j = col;
+        if (i >= 0 && i < m.length && j >= 0 && j < m.length) {
+            if (m[i][j] == 1) {
+                return false;
+            }else {
+                if (isDiagonalSafe(m, i++, j++)) {
+                    if (isDiagonalSafe(m, i--, j--)) {
+                        if (isDiagonalSafe(m, i++, j--)) {
+                            if (isDiagonalSafe(m, i--, j++)) {
+                                return true;
+                            }
+                        }
+                    }
+
+                }
+                return false;
+            }
+        }
+        return true;
     }
 }
