@@ -201,7 +201,7 @@ one exists, in array A. */
         } else {
             return (getMagicIndexForDistinct(arr, midInd + 1, high));  // search right
         }
-    }
+    }  // this is logn
 
     //arr -> 2,2,3,4,4,6,7
     //ind -> 0,1,2,3,4,5,6
@@ -222,7 +222,7 @@ one exists, in array A. */
             return right;
         }
         return -1;
-    }
+    } // this is n logn
 
     /* 9.4 Write a method to return all subsets of a set.  */
 
