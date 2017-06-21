@@ -96,9 +96,7 @@ class placeNQueens {
     }
 
     /* place queen recursively */
-    public static boolean isDiagonalSafeRecursion(int[][] m, int row, int col) {
-        int i = row;
-        int j = col;
+    public static boolean isDiagonalSafeRecursion(int[][] m, int i, int j) {
         if (i >= 0 && i < m.length && j >= 0 && j < m.length) {
             if (m[i][j] == 1) {
                 return false;
