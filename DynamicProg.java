@@ -90,7 +90,8 @@ public class DynamicProg {
         if (n == 3) {
             return 3;
         }
-        return computeStepsRecursive(n - 1) + computeStepsRecursive(n - 2) + computeStepsRecursive(n - 3);
+        return computeStepsRecursive(n - 1) + computeStepsRecursive(n - 2) + computeStepsRecursive(n - 3) + 1;// + 1 coz 1 step + probablity of other
+        
     }
  
     public static int[] computeStepsDp(int i, int[] map) {
