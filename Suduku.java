@@ -49,6 +49,7 @@ public class Suduku {
         }
         for (int num = 1; num <= 9; num++) {
             if (isSafe(board, row, col, num)) {
+                // try to fit all the number from 1-9
                 board[row][col] = num;
                 if (solveSudoku(board)) {
                     return true;
