@@ -231,37 +231,15 @@ one exists, in array A. */
     {1,2,3} has 2 subsets
      */
 
-    public static void findNoOfSubsetDP(int[] arr) {
-        int[] map = new int[arr.length + 1];
-        int n = findNoOfSubset(arr.length);
-        System.out.println("No of Subsets :" + n);
+     public static int findNoOfSubset(int n) {
+            if (n == 1) {
+                return 2;
 
-        n = findNoOfSubset(arr.length, map);
-        System.out.println("No of Subsets with Dp :" + n);
-    }
+            } else{
+               return ( 2 * findNoOfSubset(n-1));
+            }
 
-    /* recursion */
-    public static int findNoOfSubset(int x) {
-        if (x == 0) {
-            return 0;
-        }
-        if (x == 1) {
-            return 2;
-        }
-        return (2 * findNoOfSubset(x - 1));
-    }
-
-    /* Dynamic Programming */
-    public static int findNoOfSubset(int x, int[] m) {
-        if (x == 1) {
-            m[1] = 2;
-            //return (m[x]);
-        }
-        if (m[x] == 0) {
-            m[x] = 2 * findNoOfSubset(x - 1, m);
-        }
-        return m[x];
-    }
+     }
 
 
     /* Permutation of n object
